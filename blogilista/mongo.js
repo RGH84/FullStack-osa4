@@ -17,21 +17,21 @@ mongoose.set('strictQuery', false)
 mongoose.connect(mongoUrl)
 
 const blogSchema = mongoose.Schema({
-    title: String,
-    author: String,
-    url: String,
-    likes: Number
-  })
+  title: String,
+  author: String,
+  url: String,
+  likes: Number
+})
 
 const Blog = mongoose.model('Blog', blogSchema)
 
 if (title && author && url) {
-    const blog = new Blog({
-      title: title,
-      author: author,
-      url: url,
-      likes: 0
-    })
+  const blog = new Blog({
+    title: title,
+    author: author,
+    url: url,
+    likes: 0
+  })
 
   blog.save().then(() => {
     console.log(`Added ${title} to bloglist`)
