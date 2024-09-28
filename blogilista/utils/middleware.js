@@ -2,10 +2,10 @@ const logger = require('./logger')
 const morgan = require('morgan')
 
 const requestLogger = (request, response, next) => {
-  console.log('Method:', request.method)
-  console.log('Path:  ', request.path)
-  console.log('Body:  ', request.body)
-  console.log('---')
+  logger.info('Method:', request.method)
+  logger.info('Path:  ', request.path)
+  logger.info('Body:  ', request.body)
+  logger.info('---')
   next()
 }
 
@@ -13,11 +13,11 @@ morgan.token('body', (req) => JSON.stringify(req.body))
 
 const morganLogger = [
   morgan('tiny', {
-    skip: (req) => req.method === 'POST'
+    skip: (req) => req.method === 'POST' || process.env.NODE_ENV === 'test'
   }),
 
   morgan(':method :url :status :res[content-length] - :response-time ms :body', {
-    skip: (req) => req.method !== 'POST'
+    skip: (req) => req.method !== 'POST' || process.env.NODE_ENV === 'test'
   })
 ]
 

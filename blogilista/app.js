@@ -1,5 +1,6 @@
 const config = require('./utils/config')
 const express = require('express')
+require('express-async-errors')
 const app = express()
 const cors = require('cors')
 const blogsRouter = require('./controllers/blogs')
@@ -9,7 +10,7 @@ const mongoose = require('mongoose')
 
 mongoose.set('strictQuery', false)
 
-mongoose.connect(config.mongoUrl)
+mongoose.connect(config.MONGODB_URI)
   .then(() => {
     logger.info('connected to MongoDB')
   })

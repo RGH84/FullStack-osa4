@@ -10,11 +10,11 @@ const title = process.argv[3]
 const author = process.argv[4]
 const url = process.argv[5]
 
-const mongoUrl =
-  `mongodb+srv://jhmk:${password}@puhelin.6oit7.mongodb.net/bloglist?retryWrites=true&w=majority`
+const TEST_MONGODB_URI =
+  `mongodb+srv://jhmk:${password}@puhelin.6oit7.mongodb.net/testBloglist?retryWrites=true&w=majority`
 
 mongoose.set('strictQuery', false)
-mongoose.connect(mongoUrl)
+mongoose.connect(TEST_MONGODB_URI)
 
 const blogSchema = mongoose.Schema({
   title: String,
