@@ -1,9 +1,12 @@
 POST http://localhost:3003/api/blogs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ikp1aG8xIiwiaWQiOiI2NmY5NDNlZTgxN2I0Y2ZiNmM0ZTdlYTYiLCJpYXQiOjE3Mjc2Nzc0NTAsImV4cCI6MTcyNzcxNzA1MH0.mPMLNHVkdU3jZ9PAK9_6JYwGyKCjMuSeIzTUljnJLyM
+
 
 {
-  "title": "REST test",
-  "author": "REST test",
-  "url": "REST test",
-  "likes": 0
+  "title": "REST test3",
+  "author": "REST test2",
+  "url": "www",
+  "likes": 0,
+  "userId": "66f7d5e06e05da18866fd497"
 }
