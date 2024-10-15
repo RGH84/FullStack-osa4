@@ -7,7 +7,9 @@
     "dev": "cross-env NODE_ENV=development nodemon index.js",
     "test": "cross-env NODE_ENV=test test-concurrency=1 node --test",
     "lint": "eslint .",
-    "lintfix": "npm run lint -- --fix"
+    "lintfix": "npm run lint -- --fix",
+    "build:ui": "rm -rf /home/juho/koulu/fullharj/osa4/blogilista/dist && cd /home/juho/koulu/fullharj/osa5/bloglist-frontend/ && npm run build && cp -r dist /home/juho/koulu/fullharj/osa4/blogilista/",
+    "start:test": "NODE_ENV=test node index.js"
   },
   "author": "Juho Kemppainen",
   "license": "MIT",
